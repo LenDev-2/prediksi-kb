@@ -1,2 +1,0 @@
-# prediksi-kb
-predikkb
