@@ -1,101 +1,198 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-<meta charset="UTF-8" />
-<title>Prediksi Dadu King Lenz 70%</title>
-<style>
- body{background:#e6f2ff;color:#005eff;font-family:Arial;padding:20px}
- .box{max-width:500px;margin:auto;background:rgba(0,0,0,0.7);padding:30px;border-radius:20px;border:4px solid #0ff;box-shadow:0 0 20px #0ff}
- h1{text-align:center;color:#0066ff;text-shadow:0 0 10px #0066ff}
- label{display:block;margin-top:15px;font-size:18px;color:#fff}
- input,select{width:100%;padding:12px;margin-top:8px;border:none;border-radius:10px;font-size:18px}
- button{width:100%;padding:14px;margin-top:25px;font-size:22px;font-weight:bold;background:#3399ff;border:none;border-radius:12px;cursor:pointer;box-shadow:0 0 20px #3399ff;color:#000}
- .result{margin-top:25px;font-size:24px;font-weight:bold;color:#0066ff;text-shadow:0 0 6px #0066ff}
-</style>
+  <meta charset="UTF-8">
+  <title>Prediksi Dadu K/B Lenz Dukun</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #001133; /* Biru tua */
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1), /* putih */
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 20px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  animation: moveGrid 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveGrid {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50px, -50px); }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px #99ccff); /* biru muda */
+}
+
+h1 {
+  font-size: 46px;
+  margin-bottom: 35px;
+  color: #ffffff;
+  text-shadow: 0 0 18px #99ccff, 0 0 28px #ffffff;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 50px 40px;
+  border-radius: 25px;
+  box-shadow: 0 0 40px rgba(150, 200, 255, 0.9);
+  border: 5px solid #99ccff;
+  width: 95%;
+  max-width: 550px;
+}
+
+label {
+  font-size: 22px;
+  text-align: left;
+  display: block;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+input, select {
+  width: 100%;
+  padding: 18px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 14px;
+  font-size: 20px;
+  background: #e6f0ff;
+}
+
+button {
+  width: 100%;
+  padding: 18px;
+  margin-top: 30px;
+  font-size: 26px;
+  font-weight: bold;
+  border: none;
+  border-radius: 14px;
+  background-color: #99ccff;
+  color: #001133;
+  cursor: pointer;
+  box-shadow: 0 0 20px #99ccff;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #cce6ff;
+  box-shadow: 0 0 30px #ffffff;
+  transform: scale(1.07);
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px #99ccff;
+}
+
+  </style>
 </head>
 <body>
+  <div class="wrapper">
+    <img src="logo-lenz.png" alt="Logo Lenz Dukun" class="logo">
+    <h1>🎲 Prediksi Kecil/Besar - Lenz Dukun</h1>
+    <div class="container">
+      <label for="m1">Angka M1:</label>
+      <input type="number" id="m1" min="0" max="50"><label for="m2">Angka M2:</label>
+  <input type="number" id="m2" min="0" max="50">
 
-<div class="box">
-<h1>Prediksi Kecil/Besar King Lenz</h1>
+  <label for="device">Tipe Device:</label>
+  <select id="device">
+    <option value="iphone">iPhone (Semua Browser)</option>
+    <option value="android-chrome">Android (Chrome)</option>
+    <option value="android-google">Android (Google)</option>
+  </select>
 
-<label>M1:</label>
-<input type="number" id="m1" min="0" max="50">
+  <label for="menit">Menit Saat Ini (0-59):</label>
+  <input type="number" id="menit" min="0" max="59">
 
-<label>M2:</label>
-<input type="number" id="m2" min="0" max="50">
+  <button onclick="prediksi()">🔮 Prediksi Sekarang</button>
 
-<label>Tipe Device:</label>
-<select id="device">
-<option value="iphone">iPhone</option>
-<option value="android-chrome">Android Chrome</option>
-<option value="android-google">Android Google</option>
-</select>
-
-<label>Waktu Sekarang:</label>
-<div id="menitDisplay" style="font-size:22px;color:#ffffff;margin-top:10px;font-weight:bold"></div>
-
-<button onclick="prediksi()">Prediksi</button>
-<div class="result" id="hasil"></div>
+  <div class="result" id="hasilPrediksi">Hasil akan muncul di sini      <div class="result" id="jamRealTime">⏱️ Waktu: --:--:--</div>
 </div>
 
-<script>
-// Update Waktu Otomatis
-function updateClock(){
-    const now = new Date();
-    let jam = now.getHours().toString().padStart(2,'0');
-    let menit = now.getMinutes().toString().padStart(2,'0');
-    document.getElementById("menitDisplay").innerHTML = jam + ":" + menit;
-}
-setInterval(updateClock, 1000);
-updateClock();
+  </div>  <script>
+    function prediksi() {
+      const m1 = parseInt(document.getElementById("m1").value);
+      const m2 = parseInt(document.getElementById("m2").value);
+      const device = document.getElementById("device").value;
+      const menit = parseInt(document.getElementById("menit").value);
+      const hasil = document.getElementById("hasilPrediksi");
 
-// Pola Device
-function polaDevice(device, m){
- if(device==="iphone"){
-   return (m<=11)||(m>=17&&m<=27)||(m>=40&&m<=46)||(m>=54)?"B":"K";
- }
- if(device==="android-chrome"){
-   return (m<=10)||(m>=19&&m<=28)||(m>=37&&m<=42)||(m>=48&&m<=52)?"B":"K";
- }
- if(device==="android-google"){
-   return (m>=10&&m<=16)||(m>=27&&m<=32)||(m>=38&&m<=45)||(m>=51&&m<=56)?"B":"K";
- }
-}
+      if (isNaN(m1) || isNaN(m2) || isNaN(menit)) {
+        hasil.innerText = "⚠️ Mohon isi semua data dengan benar.";
+        return;
+      }
 
-function prediksi(){
- const m1=parseInt(document.getElementById("m1").value);
- const m2=parseInt(document.getElementById("m2").value);
+      function prediksiMenit(dev, m) {
+        if (dev === "iphone") {
+          if (m <= 11 || (m >= 17 && m <= 27) || (m >= 40 && m <= 46) || (m >= 54 || m === 0)) return "B";
+          else return "K";
+        }
+        if (dev === "android-chrome") {
+          if (m <= 10 || (m >= 19 && m <= 28) || (m >= 37 && m <= 42) || (m >= 48 && m <= 52)) return "B";
+          else return "K";
+        }
+        if (dev === "android-google") {
+          if ((m >= 10 && m <= 16) || (m >= 27 && m <= 32) || (m >= 38 && m <= 45) || (m >= 51 && m <= 56)) return "B";
+          else return "K";
+        }
+      }
 
- const waktu = new Date();
- const menit = waktu.getMinutes();
+      let naik = m2 > m1;
+      let duaKosong = "B";
+      if (m1 !== m2) {
+        if ((naik && duaKosong === "K") || (!naik && duaKosong === "B")) {
+          duaKosong = "K";
+        }
+      }
 
- const dev=document.getElementById("device").value;
- const hasil=document.getElementById("hasil");
-
- if(isNaN(m1)||isNaN(m2)){
-   hasil.innerHTML="Isi semua bidang!";
-   return;
- }
-
- let menitPola = polaDevice(dev, menit);
-
- let naik = m2 > m1;
- let booster = naik ? "B" : "K";
-
- let final;
- if(minitFavor(menit)){
-   final = menitPola;
- } else {
-   final = Math.random() < 0.7 ? menitPola : booster;
- }
-
- hasil.innerHTML = `Prediksi: <strong>${final}</strong>`;
-}
-
-function minitFavor(m){
- return (m%5===0)||(m%7===0)||(m%9===0);
-}
-</script>
-
-</body>
+      const dariMenit = prediksiMenit(device, menit);
+      hasil.innerHTML = `🎯 Prediksi dari Pola Menit: <strong>${dariMenit}</strong><br>
+                         🔄 Prediksi dari Naik/Turun: <strong>${duaKosong}</strong>`;
+    }
+    setInterval(() => {
+      const r = new Date();
+      const t = r.toLocaleTimeString('id-ID', { hour12: false });
+      document.getElementById('jamRealTime').innerText = `⏱️ Waktu: ${t}`;
+    }, 1000);
+  </script></body>
 </html>
