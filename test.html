@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<title>Prediksi Dadu King Lenz 70%</title>
+<style>
+ body{background:#e6f2ff;color:#005eff;font-family:Arial;padding:20px}
+ .box{max-width:500px;margin:auto;background:rgba(0,0,0,0.7);padding:30px;border-radius:20px;border:4px solid #0ff;box-shadow:0 0 20px #0ff}
+ h1{text-align:center;color:#0066ff;text-shadow:0 0 10px #0066ff}
+ label{display:block;margin-top:15px;font-size:18px;color:#fff}
+ input,select{width:100%;padding:12px;margin-top:8px;border:none;border-radius:10px;font-size:18px}
+ button{width:100%;padding:14px;margin-top:25px;font-size:22px;font-weight:bold;background:#3399ff;border:none;border-radius:12px;cursor:pointer;box-shadow:0 0 20px #3399ff;color:#000}
+ .result{margin-top:25px;font-size:24px;font-weight:bold;color:#0066ff;text-shadow:0 0 6px #0066ff}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h1>Prediksi Kecil/Besar King Lenz</h1>
+
+<label>M1:</label>
+<input type="number" id="m1" min="0" max="50">
+
+<label>M2:</label>
+<input type="number" id="m2" min="0" max="50">
+
+<label>Tipe Device:</label>
+<select id="device">
+<option value="iphone">iPhone</option>
+<option value="android-chrome">Android Chrome</option>
+<option value="android-google">Android Google</option>
+</select>
+
+<label>Waktu Sekarang:</label>
+<div id="menitDisplay" style="font-size:22px;color:#ffffff;margin-top:10px;font-weight:bold"></div>
+
+<button onclick="prediksi()">Prediksi</button>
+<div class="result" id="hasil"></div>
+</div>
+
+<script>
+// Update Waktu Otomatis
+function updateClock(){
+    const now = new Date();
+    let jam = now.getHours().toString().padStart(2,'0');
+    let menit = now.getMinutes().toString().padStart(2,'0');
+    document.getElementById("menitDisplay").innerHTML = jam + ":" + menit;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// Pola Device
+function polaDevice(device, m){
+ if(device==="iphone"){
+   return (m<=11)||(m>=17&&m<=27)||(m>=40&&m<=46)||(m>=54)?"B":"K";
+ }
+ if(device==="android-chrome"){
+   return (m<=10)||(m>=19&&m<=28)||(m>=37&&m<=42)||(m>=48&&m<=52)?"B":"K";
+ }
+ if(device==="android-google"){
+   return (m>=10&&m<=16)||(m>=27&&m<=32)||(m>=38&&m<=45)||(m>=51&&m<=56)?"B":"K";
+ }
+}
+
+function prediksi(){
+ const m1=parseInt(document.getElementById("m1").value);
+ const m2=parseInt(document.getElementById("m2").value);
+
+ const waktu = new Date();
+ const menit = waktu.getMinutes();
+
+ const dev=document.getElementById("device").value;
+ const hasil=document.getElementById("hasil");
+
+ if(isNaN(m1)||isNaN(m2)){
+   hasil.innerHTML="Isi semua bidang!";
+   return;
+ }
+
+ let menitPola = polaDevice(dev, menit);
+
+ let naik = m2 > m1;
+ let booster = naik ? "B" : "K";
+
+ let final;
+ if(minitFavor(menit)){
+   final = menitPola;
+ } else {
+   final = Math.random() < 0.7 ? menitPola : booster;
+ }
+
+ hasil.innerHTML = `Prediksi: <strong>${final}</strong>`;
+}
+
+function minitFavor(m){
+ return (m%5===0)||(m%7===0)||(m%9===0);
+}
+</script>
+
+</body>
+</html>
